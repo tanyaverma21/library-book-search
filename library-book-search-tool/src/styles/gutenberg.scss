@@ -1,0 +1,40 @@
+// backend css file.
+div.search-wrapper {
+  table.search-table {
+    width: 800px;
+    height: 200px;
+
+    td.search-table-td {
+      width: 50%;
+      padding-right: 25px;
+      padding-bottom: 25px;
+    }
+
+    input.search-input-field {
+      margin: 2px;
+      float: right;
+    }
+
+    select.search-input-select {
+      float: right;
+      width: 230px;
+    }
+  }
+  
+  button.search-btn {
+    padding: 6px 32px;
+    background: #007cba;
+    border: 1px solid #007cba;
+    border-radius: 2px;
+    color: #fff;
+    width: 250px;
+    height: 50px;
+  }
+
+  div.search {
+    margin-top: 30px;
+    border: 2px dotted;
+    padding: 10px;
+    font-style: italic;
+  }
+}

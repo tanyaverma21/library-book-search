@@ -1,0 +1,23 @@
+{
+    "name": "tanyaverma/library-book-search-tool",
+    "description": "Plugin to manage and search library books available in the system with various filters given.",
+    "type": "composer-plugin",
+    "authors": [
+        {
+            "name": "Tanya Verma",
+            "email": "ertanyasverma@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+    "files": [
+        "inc/setup.php",
+        "inc/asset-settings.php"
+    ],
+    "psr-4": {
+        "Library\\BookSearch\\": "inc/"
+    },
+    "classmap": [ "inc/" ]
+    }
+}

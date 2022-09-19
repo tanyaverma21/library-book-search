@@ -1,0 +1,103 @@
+/* frontend css file. */
+div.search-wrapper {
+  table.search-table {
+    width: 800px;
+    height: 200px;
+
+    td.search-table-td {
+      width: 50%;
+      padding-right: 25px;
+      padding-bottom: 25px;
+    }
+
+    input.search-input-field {
+      margin: 2px;
+      float: right;
+      width: 200px;
+      height: 20px;
+      padding: 6px;
+    }
+
+    select.search-input-select {
+      float: right;
+      width: 220px;
+      height: 35px;
+      padding: 6px;
+    }
+  }
+  
+  button.search-btn {
+    padding: 6px 32px;
+    background: #007cba;
+    border: 1px solid #007cba;
+    border-radius: 4px;
+    color: #fff;
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  div.search-results {
+    margin-top: 30px;
+    width: 900px;
+
+    th, table{
+      border: 2px dotted;
+    }
+
+    table {
+      width: 100%;
+      font-size: 15px;
+    }
+
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    td.rating {
+      width: 120px;
+    }
+  }
+
+  td.td-range {
+    width: 100%;
+
+    input.slider {
+      cursor: pointer;
+      width: 65%;
+    }
+
+    span#range-value {
+      float: right;
+    }
+  }
+
+  button#load-more {
+    padding: 6px 32px;
+    background: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: #ffe2c7;
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  tr.hide {
+    display: none;
+  }
+
+  tr.show {
+    display: table-row;
+  }
+}
+
+div.book-details {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
