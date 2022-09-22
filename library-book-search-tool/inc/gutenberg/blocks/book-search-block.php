@@ -140,7 +140,7 @@ if ( ! function_exists( 'render_book_search_block' ) ) {
                                     <?php if (!empty($book_publishers)): ?>
                                         <td><?php
                                         foreach ($book_publishers as $book_publisher) { ?>
-                                            <a href="<?php echo esc_url( get_term_link( $book_publisher->slug, 'author' ) ) ?>" ><?php echo esc_html( $book_publisher->name ) ?></a>
+                                            <a href="<?php echo esc_url( get_term_link( $book_publisher->slug, 'publisher' ) ) ?>" ><?php echo esc_html( $book_publisher->name ) ?></a>
                                         <?php } ?>
                                         </td>
                                     <?php endif; ?>
