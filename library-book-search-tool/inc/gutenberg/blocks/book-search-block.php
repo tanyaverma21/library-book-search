@@ -194,7 +194,7 @@ if ( ! function_exists( 'search_books_ajax_handler' ) ) {
         $book_author = filter_input(INPUT_POST, 'author', FILTER_SANITIZE_NUMBER_INT);
         $book_publisher = filter_input(INPUT_POST, 'publisher', FILTER_SANITIZE_NUMBER_INT);
         $book_rating = filter_input(INPUT_POST, 'rating', FILTER_SANITIZE_NUMBER_INT);
-        $book_price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_INT);
+        $book_price = (int)filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_INT);
 
         $args = process_args( $book_name, $book_author, $book_publisher, $book_rating, $book_price );
         add_filter( 'posts_where', 'title_filter', 10, 2 );
@@ -335,12 +335,12 @@ if ( ! function_exists( 'process_args' ) ) {
         }
 
         // meta query for price and rating meta fields.
-        if (!empty($book_price) && !empty($book_rating)) {
+        if ($book_price !== '' && !empty($book_rating)) {
             $args['meta_query'] = [
                 'relation' => 'AND',
                 [
                     'key' => 'book_price',
-			        'value' => (int)$book_price,
+			        'value' => $book_price,
                     'type'    => 'numeric',
                     'compare' => '<=',
                 ],
@@ -351,7 +351,7 @@ if ( ! function_exists( 'process_args' ) ) {
                     'compare' => '==',
                 ],
             ];
-        } else if (empty($book_price) && !empty($book_rating)) {
+        } else if ($book_price === '' && !empty($book_rating)) {
             $args['meta_query'] = [
                 [
                     'key' => 'book_rating',
@@ -360,11 +360,11 @@ if ( ! function_exists( 'process_args' ) ) {
                     'compare' => '==',
                 ],
             ];
-        } else if (!empty($book_price) && empty($book_rating)) {
+        } else if ($book_price !== '' && empty($book_rating)) {
             $args['meta_query'] = [
                 [
                     'key' => 'book_price',
-			        'value' => (int)$book_price,
+			        'value' => $book_price,
                     'type'    => 'numeric',
                     'compare' => '<=',
                 ],
